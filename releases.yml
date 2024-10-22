@@ -1,0 +1,110 @@
+toolchains:
+  13.3.rel1:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "13.3.1"
+    build_date: "20240614"
+    package: "arm-gnu-toolchain"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/13.3.rel1/binrel/arm-gnu-toolchain-13.3.rel1-${arch}-arm-none-eabi.tar.xz"
+  13.2.rel1:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "13.2.0"
+    build_date: "20231009"
+    package: "arm-gnu-toolchain"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/13.2.rel1/binrel/arm-gnu-toolchain-13.2.rel1-${arch}-arm-none-eabi.tar.xz"
+  12.3.rel1:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "12.3.1"
+    build_date: "20230626"
+    package: "arm-gnu-toolchain"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/12.3.rel1/binrel/arm-gnu-toolchain-12.3.rel1-${arch}-arm-none-eabi.tar.xz"
+  12.2.rel1:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "12.2.1"
+    build_date: "20221205"
+    package: "arm-gnu-toolchain"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-${arch}-arm-none-eabi.tar.xz"
+  11.3.rel1:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "11.3.1"
+    build_date: "20220712"
+    package: "arm-gnu-toolchain"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/11.3.rel1/binrel/arm-gnu-toolchain-11.3.rel1-${arch}-arm-none-eabi.tar.xz"
+  11.2-2022.02:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "11.2.1"
+    build_date: "20220111"
+    internal_version: (arm-11.1"4)
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu/11.2-2022.02/binrel/gcc-arm-11.2-2022.02-${arch}-arm-none-eabi.tar.xz"
+  10.3-2021.10:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "10.3.1"
+    build_date: "20210824"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.10/gcc-arm-none-eabi-10.3-2021.10-${arch}-linux.tar.bz2"
+  10.3-2021.07:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "10.3.1"
+    build_date: "20210621"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10.3-2021.07/gcc-arm-none-eabi-10.3-2021.07-${arch}-linux.tar.bz2"
+  10-2020-q4-major:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "10.2.1"
+    build_date: "20201103"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/10-2020q4/gcc-arm-none-eabi-10-2020-q4-major-${arch}-linux.tar.bz2"
+  9-2020-q2-update:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "9.3.1"
+    build_date: "20200408"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2020q2/gcc-arm-none-eabi-9-2020-q2-update-${arch}-linux.tar.bz2"
+  9-2019-q4-major:
+    archs: ["x86_64", "aarch64"]
+    gcc_version: "9.2.1"
+    build_date: "20191025"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/9-2019q4/gcc-arm-none-eabi-9-2019-q4-major-${arch}-linux.tar.bz2"
+  8-2019-q3-update:
+    archs: ["x86_64"]
+    gcc_version: "8.3.1"
+    build_date: "20190703"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2019q3/RC1.1/gcc-arm-none-eabi-8-2019-q3-update-linux.tar.bz2"
+  8-2018-q4-major:
+    archs: ["x86_64"]
+    gcc_version: "8.2.1"
+    build_date: "20181213"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/8-2018q4/gcc-arm-none-eabi-8-2018-q4-major-linux.tar.bz2"
+  7-2018-q2-update:
+    archs: ["x86_64"]
+    gcc_version: "7.3.1"
+    build_date: "20180622"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2018q2/gcc-arm-none-eabi-7-2018-q2-update-linux.tar.bz2"
+  7-2017-q4-major:
+    archs: ["x86_64"]
+    gcc_version: "7.2.1"
+    build_date: "20170904"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/7-2017q4/gcc-arm-none-eabi-7-2017-q4-major-linux.tar.bz2"
+  6-2017-q2-update:
+    archs: ["x86_64"]
+    gcc_version: "6.3.1"
+    build_date: "20170620"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2017q2/gcc-arm-none-eabi-6-2017-q2-update-linux.tar.bz2"
+  6-2017-q1-update:
+    archs: ["x86_64"]
+    gcc_version: "6.3.1"
+    build_date: "20170215"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6_1-2017q1/gcc-arm-none-eabi-6-2017-q1-update-linux.tar.bz2"
+  6-2016-q4-major:
+    archs: ["x86_64"]
+    gcc_version: "6.2.1"
+    build_date: "20161205"
+    package: "gcc-arm-none-eabi"
+    link: "https://developer.arm.com/-/media/Files/downloads/gnu-rm/6-2016q4/gcc-arm-none-eabi-6_2-2016q4-20161216-linux.tar.bz2"
