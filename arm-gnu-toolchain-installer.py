@@ -61,13 +61,17 @@ def install_version(version):
     archive_path = Path(TMP_DIR) / f"{package_name}.tar.xz"
 
     print(f"Downloading {package_name} from {url}...")
-    urllib.request.urlretrieve(url, archive_path)
+    if (not archive_path.exists()):
+        urllib.request.urlretrieve(url, archive_path)
+    else:
+        print(f"Found cached {archive_path}")
 
     # Extract the package to /opt
     install_path = Path(INSTALL_DIR) / package_name
+    subprocess.run(["sudo", "mkdir", "-p", install_path], check=True)
     print(f"Installing {package_name} to {install_path}...")
     try:
-        subprocess.run(['sudo', 'tar', '-xf', archive_path, '-C', INSTALL_DIR, '--strip-components=1'], check=True)
+        subprocess.run(['sudo', 'tar', '-xf', archive_path, '-C', install_path, '--strip-components=1'], check=True)
     except subprocess.CalledProcessError as e:
         print(f"Error: Failed to extract {package_name}: {e}")
         sys.exit(1)
@@ -76,11 +80,21 @@ def install_version(version):
         archive_path.unlink()
 
     # Register the toolchain with update-alternatives
-    gcc_path = install_path / 'bin' / 'arm-none-eabi-gcc'
-    priority = releases[version]['build_date']
-    subprocess.run(['sudo', 'update-alternatives', '--install', '/usr/bin/arm-none-eabi-gcc', 'arm-none-eabi-gcc', str(gcc_path), priority], check=True)
+    register_version(install_path, releases[version]['build_date'])
 
     print(f"Version '{version}' installed successfully.")
+
+def register_version(install_path, priority):
+
+    command = ["sudo", "update-alternatives", "--verbose", "--install", "/usr/bin/arm-none-eabi-gcc", install_path / "bin" / "arm-none-eabi-gcc", priority]
+
+    tools = ['strings', 'gcc-ranlib', 'gcov-dump', 'ld', 'cpp', 'strip', 'readelf', 'objdump', 'c++filt', 'gprof', 'gdb-add-index-py', 'c++', 'gdb-add-index', 'gcov', 'as', 'gdb', 'ranlib', 'gcc-nm', 'elfedit', 'gcov-tool', 'gcc-ar', 'ar', 'objcopy', 'addr2line', 'gdb-py', 'ld.bfd', 'g++', 'size', 'nm']
+
+    for tool in tools:
+        binary_name = f"arm-none-eabi-{tool}"
+        command.extend(["--slave", f"/usr/bin/{binary_name}", binary_name, install_path / "bin" / binary_name])
+
+    subprocess.run(command, check=True)
 
 
 def use_version(version):
